@@ -1,0 +1,35 @@
+{
+    "student_name": "Mr.Kritanat Chorpaga",
+    "date_of_birth": "August 16th 2004",
+    "student_id": "65011353",
+    "date_of_admission": "2022",
+    "date_of_graduation": "N/A",
+    "degree": "Bachelor of Engineering",
+    "major": "Software Engineering",
+    "credit": {
+        "Year, 2022-2023": {
+            "1st Semester": [
+                {
+                    "name": "Introduction to Calculus",
+                    "subject_id": "01006710",
+                    "credit": "3",
+                    "grade": "A"
+                },
+                {
+                    "name": "Circuits and Electronics",
+                    "subject_id": "01286111",
+                    "credit": "4",
+                    "grade": "B"
+                }
+            ],
+            "2nd Semester": [
+                {
+                    "name": "Differential Equations",
+                    "subject_id": "01006717",
+                    "credit": "3",
+                    "grade": "C"
+                }
+            ]
+        }
+    }
+}

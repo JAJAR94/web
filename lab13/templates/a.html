@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Transcript</title>
+</head>
+<body>
+    <h2>Transcript Entry Form</h2>
+    <p>ID: {{ student.id }}</p>
+    <p>Name: {{ student.name }}</p>
+
+    <table border="1">
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Credit</th>
+            <th>Score</th>
+        </tr>
+        {% for course in student.enrolled_courses %}
+        <tr>
+            <td><a href="/course/{{ course.course_id }}">{{ course.course_id }}</a></td> <!-- Link to view the course -->
+            <td>{{ course.course_name }}</td>
+            <td>{{ course.credit }}</td>
+            <td><input type="number" name="score_{{ course.course_id }}"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic HTML Table</title>
+</head>
+<body>
+    <button onclick="createTable()">Create Table</button>
+    <button onclick="rewriteTable()">Rewrite Table</button>
+
+    <script>
+        function createTable() {
+            // Clear the existing content
+            document.body.innerHTML = '';
+
+            // Recreate the buttons
+            document.writeln('<button onclick="createTable()">Create Table</button>');
+            document.writeln('<button onclick="rewriteTable()">Rewrite Table</button>');
+
+            // Create an HTML table using document.writeln
+            document.writeln('<table border="1">');
+            document.writeln('<tr><th>Header 1</th><th>Header 2</th></tr>');
+            document.writeln('<tr><td>Row 1, Cell 1</td><td>Row 1, Cell 2</td></tr>');
+            document.writeln('<tr><td>Row 2, Cell 1</td><td>Row 2, Cell 2</td></tr>');
+            document.writeln('</table>');
+        }
+
+        function rewriteTable() {
+            // Clear the existing content
+            document.body.innerHTML = '';
+
+            // Recreate the buttons
+            document.writeln('<button onclick="createTable()">Create Table</button>');
+            document.writeln('<button onclick="rewriteTable()">Rewrite Table</button>');
+
+            // Create a new HTML table using document.writeln
+            document.writeln('<table border="1">');
+            document.writeln('<tr><th>New Header 1</th><th>New Header 2</th></tr>');
+            document.writeln('<tr><td>New Row 1, Cell 1</td><td>New Row 1, Cell 2</td></tr>');
+            document.writeln('<tr><td>New Row 2, Cell 1</td><td>New Row 2, Cell 2</td></tr>');
+            document.writeln('</table>');
+        }
+    </script>
+</body>
+</html>

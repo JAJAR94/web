@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Note App</title>
+    <style>
+        .container {
+            border: 1px solid #000;
+            padding: 20px;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .button {
+            float: right;
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Note App</h1>
+        <a class="button" href="/notes/all">Show All Notes</a>
+        <table>
+            <tr>
+                <th>Title</th>
+            </tr>
+            {% for note_id, note in notes.items() %}
+            <tr>
+                <td><a href="/notes/{{ note_id }}">{{ note.title }}</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>Note created:</p>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+            </tr>
+            <tr>
+                <td>{{ note.title }}</td>
+                <td>{{ note.content }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Shopping List</h1>
+    <br><br>
+    <table id="myTable">
+        <thead style="background-color: rgb(213, 237, 206);">
+            <th style="border: 1px solid black;">Item name</th>
+            <th style="border: 1px solid black;">Amount</th>
+            <th style="border: 1px solid black;">Price</th>
+        </thead>
+
+    </table>
+    <button id="Reset" onclick="reset_table()"> Reset List </button>
+    <br><br>
+    <label for="Name">Name</label>
+    <input type="text" id="Name">
+    <br><br>
+    <label for="Amount">Amount</label>
+    <input type="text" id="Amount">
+    <br><br>
+    <label for="Price">Price</label>
+    <input type="text" id="Price">
+    <br><br>
+    <button id="Add" onclick="addRow()"> Add </button>
+    <button id="Clear" onclick="cleartable()"> Clear </button>
+    <script>
+
+        function reset_table(){
+            var tableHeaderRowCount = 1;
+            var table = document.getElementById("myTable");
+            var rowCount = table.rows.length;
+            for (var i = tableHeaderRowCount; i < rowCount; i++) {
+                table.deleteRow(tableHeaderRowCount);
+            }
+        }
+        
+        function addRow() {
+            let table = document.getElementById("myTable");
+
+            let row = table.insertRow(-1);
+
+            const NameElement = document.getElementById("Name");
+            const AmountElement = document.getElementById("Amount");
+            const PriceElement = document.getElementById("Price");
+
+            const name_value = NameElement.value;
+            const amount_value = AmountElement.value;
+            const price_value = PriceElement.value;
+
+            let c1 = row.insertCell(0);
+            let c2 = row.insertCell(1);
+            let c3 = row.insertCell(2);
+
+            c1.innerText = name_value
+            c2.innerText = amount_value
+            c3.innerText = price_value
+        }
+
+        function cleartable() {
+            document.getElementById("Name").value='';
+            document.getElementById("Amount").value='';
+            document.getElementById("Price").value='';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #3a4764;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.calculator {
+  background-color: #252d44;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+}
+
+.top-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+
+.display {
+  background-color: #181f32;
+  color: white;
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes children evenly */
+  height: 120px; /* Set a fixed height for the display area */
+}
+
+.formula {
+
+  font-size: 2.5em;
+  text-align: right;
+  overflow: auto;
+}
+
+.result {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1em; /* Larger font size for the result */
+  text-align: right;
+}
+
+
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Adjust as needed */
+  gap: 10px;
+  /* ... other styles ... */
+}
+
+.btn {
+  padding: 15px; /* Decreased padding */
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 1em; /* Decreased font size */
+  cursor: pointer;
+}
+
+.func-btn {
+  background-color: #647198;
+}
+
+.num-btn {
+  background-color: #eae3dc;
+  color: #444b5a;
+}
+
+.op-btn {
+  background-color: #404e72;
+}
+
+.action-btn {
+  background-color: #637097;
+}
+
+.equal-btn {
+  background-color: #d03f2f;
+  grid-column: span 2; /* Makes the button take two columns */
+}
+
+.del-btn {
+  background-color: #d03f2f;
+  grid-column: span 2; /* Makes the button take two columns */
+}
+
+.btn:active {
+  background-color: #9e9e9e;
+}
+
+.history-panel{
+  /* Removed text-align: right; if you want the History button to be centered */
+  display: flex;
+  justify-content: flex-end; /* Align to the right of the top panel */
+}
+
+/* Style the History button */
+.history-btn {
+  background-color: #1e2433;
+  color: white;
+  border: none;
+  border-radius: 5px; /* Adjust for a more rectangular button shape */
+  padding: 10px 20px; /* Add padding to increase width */
+  font-size: 0.85em; /* Adjust font size as necessary */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth background color transition on hover or active */
+}
+.history-btn.active {
+  background-color: #d03f2f;
+}

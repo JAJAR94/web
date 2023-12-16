@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telephone Dial Panel</title>
+    <style>
+        table {
+            width: 300px;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td {
+            border: 1px solid #000;
+            text-align: center;
+            padding: 10px; 
+        }
+
+        #screen {
+            height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="3" id="screen">Please dial a tel. no.</td>
+        </tr>
+        <tr>
+            <td><button id="btn1">1</button></td>
+            <td><button id="btn2">2</button></td>
+            <td><button id="btn3">3</button></td>
+        </tr>
+        <tr>
+            <td><button id="btn4">4</button></td>
+            <td><button id="btn5">5</button></td>
+            <td><button id="btn6">6</button></td>
+        </tr>
+        <tr>
+            <td><button id="btn7">7</button></td>
+            <td><button id="btn8">8</button></td>
+            <td><button id="btn9">9</button></td>
+        </tr>
+        <tr>
+            <td><button id="btnStar">*</button></td>
+            <td><button id="btn0">0</button></td>
+            <td><button id="btnHash">#</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button id="btnDel">&lt;Del</button></td>
+            <td><button id="btnCall">Call</button></td>
+        </tr>
+    </table>
+    <div id="statusText" style="text-align: center;">Status: Ready</div>
+        
+
+    <script>
+        let screen = document.getElementById("screen");
+        let currentNumber = "";
+        let statusText = document.getElementById("statusText"); // Get the status text <div>
+
+        function dial(number) {
+            if (currentNumber.length < 10) {
+                currentNumber += number;
+                updateScreen();
+            }
+        }
+
+        function deleteDigit() {
+            if (currentNumber.length > 0) {
+                currentNumber = currentNumber.slice(0, -1);
+                updateScreen();
+            }
+        }
+
+        function makeCall() {
+            if (currentNumber.length === 10) {
+                screen.innerText = "Calling...";
+                statusText.innerText = "ok"
+                // You can perform further actions here, e.g., initiate a call.
+            } else {
+                screen.innerHTML = "Error: Please dial 10 numbers.";
+            }
+        }
+
+        function updateScreen() {
+            screen.innerText = currentNumber;
+        }
+
+        // Attach event listeners to buttons
+        document.getElementById("btn1").addEventListener("click", function() {dial("1");});
+        document.getElementById("btn2").addEventListener("click", () => dial("2"));
+        document.getElementById("btn3").addEventListener("click", () => dial("3"));
+        document.getElementById("btn4").addEventListener("click", () => dial("4"));
+        document.getElementById("btn5").addEventListener("click", () => dial("5"));
+        document.getElementById("btn6").addEventListener("click", () => dial("6"));
+        document.getElementById("btn7").addEventListener("click", () => dial("7"));
+        document.getElementById("btn8").addEventListener("click", () => dial("8"));
+        document.getElementById("btn9").addEventListener("click", () => dial("9"));
+        document.getElementById("btn0").addEventListener("click", () => dial("0"));
+        document.getElementById("btnStar").addEventListener("click", () => dial("*"));
+        document.getElementById("btnHash").addEventListener("click", () => dial("#"));
+        document.getElementById("btnDel").addEventListener("click", deleteDigit);
+        document.getElementById("btnCall").addEventListener("click", makeCall);
+    </script>
+</body>
+</html>

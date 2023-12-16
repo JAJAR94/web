@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            th,td{
+                border: 1px solid black;
+            }
+        </style>
+        <script>
+            function show(){
+                //Next time try function that return
+                let weightelement = document.getElementById("weight");
+                let heightelement = document.getElementById("height");
+                
+                let weight_value = weightelement.value;
+                let height_value = heightelement.value;
+                const BMI = (weight_value/height_value/height_value)*10000;
+
+                const outputElement = document.getElementById("output");
+                const statusElement = document.getElementById("status");
+                const lineBreak = document.createElement("br");
+                const text = document.createTextNode("With your weight of "+weight_value+" kg and height of "+height_value+" cm");
+                const text_bmi = document.createTextNode("Your BMI is "+BMI);
+
+                outputElement.appendChild(text);
+                outputElement.appendChild(lineBreak);
+                outputElement.appendChild(text_bmi);
+
+                if(BMI<18.5){
+                    statusElement.appendChild(document.createTextNode("You are UnderWeight"));
+                }
+                if(BMI>18.5 && BMI<24.9){
+                    statusElement.appendChild(document.createTextNode("You are Normal Weight"));
+                }
+                if(BMI>25.5 && BMI<29.9){
+                    statusElement.appendChild(document.createTextNode("You are Overweight"));
+                }
+                if(BMI>30){
+                    statusElement.appendChild(document.createTextNode("You are Obese"));
+                }
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>BMI Calculator</h1>
+        <br><br>
+        <label for="Weight">Weight(kg)</label>
+        <input type="text" id="weight"><br>
+        <label for="Height">Height(cm)</label>
+        <input type="text" id="height"><br>
+        <button id="Calculate" onclick="show()">Calculate</button>
+        <h2>BMI Results</h2>
+        <div>
+            <p id="output"></p>
+        </div>
+        <div>
+            <h2 id="status"></h2>
+        </div>
+        <h3>BMI Reference</h3>
+        <table>
+            <thead>
+                <th style="background-color: blue;">BMI</th>
+                <th style="background-color: blue;">Classification</th>
+            </thead>
+            <tr>
+                <td>Less than 18.5</td>
+                <td>Underweight</td>
+            </tr>
+            <tr>
+                <td>18.5-24.9</td>
+                <td>Normal weight</td>
+            </tr>
+            <tr>
+                <td>25.0-29.9</td>
+                <td>Overweight</td>
+            </tr>
+            <tr>
+                <td>30.0 or more</td>
+                <td>Obese</td>
+            </tr>
+        </table>
+    </body>
+</html>

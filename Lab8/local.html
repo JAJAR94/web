@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage Example</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Local Storage Example</h1>
+    <!-- Textarea for displaying and editing data -->
+    <textarea id="TextArea"></textarea>
+    <br>
+    <button onclick="clearStorage()">Click Here and then F5 to make the text gone</button>
+
+    <script>
+        const TextArea = document.getElementById('TextArea');
+
+        // Function to save data as a file
+        function saveData() {
+            const content = TextArea.value;
+            localStorage.setItem('savedText', content);
+        }
+
+        // Function to load data from localStorage
+        function loadData() {
+            const savedText = localStorage.getItem('savedText');
+            if (savedText) {
+                TextArea.value = savedText;
+            }
+        }
+
+        // Clearing all data in localStorage for the current domain
+        function clearStorage() {
+            localStorage.clear();
+        }
+
+        // Load previously saved data when the page loads
+        window.addEventListener('load', loadData);
+
+        // Add an input event listener to save data when the textarea changes
+        TextArea.addEventListener('input', saveData);
+    </script>
+</body>
+</html>

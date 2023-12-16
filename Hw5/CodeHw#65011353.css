@@ -1,0 +1,94 @@
+
+@media screen and (max-width: 1080px) {
+
+    .subject {
+        width: 100%; 
+        margin-left: 0; 
+    }
+
+    .subject_container p {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 480px) {
+
+
+    .container h1 {
+        font-size: 24px; 
+    }
+
+    .container h2 {
+        font-size: 18px; 
+    }
+
+    .container h3 {
+        font-size: 16px; 
+    }
+
+    .container img{
+        width: 150%;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width:750px) {
+  
+    .curriculum_courses {
+
+        display: block;
+        flex-direction: column;
+    }
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+.container h1{
+    font-size: 48px;
+}
+
+.container h2{
+    font-size: 36px;
+}
+
+.container h3{
+    font-size: 24px;
+}
+
+.container img{
+    max-width: 100%;
+    height: auto;
+}
+
+.subject {
+    border: 1px solid black;
+    padding: 5px; 
+    width: 100%;
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+
+
+.subject_container {
+    flex-basis: calc(50% - 2%); 
+    margin-bottom: 10px; 
+}
+
+.subject_container p{
+    margin-left: 2%;
+
+    width: 50%;
+    font-size: 24px;
+}
+
+.curriculum_courses{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+}
